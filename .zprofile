@@ -61,3 +61,9 @@ alias -g T='| tail -n '
 # edit output in nvim
 alias -g V='> out && nvim out'
 
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
+RPROMPT="[%T]"

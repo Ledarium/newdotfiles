@@ -26,10 +26,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# for wine to work normally
-export LC_COLLATE=ru_RU.UTF-8
-export LC_CTYPE=ru_RU.UTF-8
-
 # for gpg in git to work
 export GPG_TTY=$(tty)
 

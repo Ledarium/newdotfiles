@@ -1,0 +1,73 @@
+snippet -с "Статья" bA
+@Article{$1,
+	title =         {$2},
+	author = 		{$3},
+	journal = 	    {$4},
+	year = 		    {$5},
+	number =        {$6},
+	url =           {$7},
+	langid =        "russian"
+}
+
+$0
+endsnippet
+
+snippet -к "Книга" bA
+@Book{$1,
+	title =         {$2},
+	subtitle = 		{$3},
+	author = 	    {$4},
+	publisher = 	{$5},
+	address =       {${6:М.}},
+	year = 		    {$7},
+	pages =         $8,
+	langid =        "russian"
+}
+
+$0
+endsnippet
+
+snippet -и "Интернетик" bA
+@online{$1,
+	author =        {$2},
+	title = 		{$3},
+	url =	 	    {$4},
+	date =		 	{`date +%F`}
+}
+
+$0
+endsnippet
+
+snippet -в "вики" bA
+@online{${1:wiki:},
+	author =        {Википедия},
+	title = 		{$3},
+	url =	 	    {$4},
+	date =		 	{`date +%F`}
+}
+
+$0
+endsnippet
+
+snippet -д "Документация" bA
+@Reference{$1,
+	heading =       {$2},
+	title = 		{$3},
+	url =	 	    {$4},
+	date =		 	{`date +%F`}
+}
+
+$0
+endsnippet
+
+snippet -г "ГОСТ" bA
+@Reference{gost$1,
+	heading =       {ГОСТ $1-$2},
+	title = 		{$3},
+	publisher = 	{Стандартинформ},
+	address =       {М.},
+	year = 		    {2019}
+}
+
+$0
+endsnippet

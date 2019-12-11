@@ -48,6 +48,9 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 plugins=(
+    fzf
+    virtualenv
+    virtualenvwrapper
     zsh-autosuggestions 
     git
     python
@@ -106,3 +109,5 @@ source ~/.zprofile
 ZSH_COMMAND_TIME_MIN_SECONDS=2
 ZSH_COMMAND_TIME_ECHO=1
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

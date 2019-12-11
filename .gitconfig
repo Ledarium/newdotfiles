@@ -1,3 +1,21 @@
 [user]
-	email = maylarov@yandex.ru
-	name = Dmitry Maylarov
+    email = maylarov@yandex.ru
+    name = Dmitry Maylarov
+    signingkey = maylarov@yandex.ru
+[core]
+    autocrlf = input
+    safecrlf = true
+    excludesfile = ~/.gitignore
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    lg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+	hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[credential]
+    helper = cache --timeout=7200
+[gpg]
+    program = gpg2

@@ -47,7 +47,16 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git python extract systemd dircycle sudo web-search)
+plugins=(
+    zsh-autosuggestions 
+    git
+    python
+    extract
+    systemd
+    dircycle
+    sudo
+    web-search
+)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 
 # User configuration

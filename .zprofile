@@ -62,3 +62,5 @@ alias -g T='| tail -n '
 alias -g V='> out && nvim out'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+bindkey '^ ' autosuggest-accept

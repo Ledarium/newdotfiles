@@ -1,0 +1,8 @@
+env/lib64
+env/pyvenv.cfg
+env/bin/
+env/lib/
+env/share/
+.mypy_cache/
+pylama.ini
+__pycache__/

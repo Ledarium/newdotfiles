@@ -44,17 +44,4 @@ alias mnt_tmp='sudo vmhgfs-fuse .host:/tmp /mnt/hgfs/tmp/ -o allow_other -o uid=
 alias mnt_study='sudo vmhgfs-fuse .host:/study /mnt/hgfs/study/ -o allow_other -o uid=1000'
 alias dotfiles='/usr/bin/git --git-dir=/home/dmaylarov/.dotfiles/ --work-tree=/home/dmaylarov'
 
-# errors to null
-alias -g N='2>/dev/null'
-# pipe to less
-alias -g L='| less'
-# pipe to grep
-alias -g G='| grep'
-# show only first n lines
-alias -g H='| head -n '
-# show only last n lines
-alias -g T='| tail -n '
-# edit output in nvim
-alias -g V='> out && nvim out'
-
 

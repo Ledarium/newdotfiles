@@ -51,3 +51,17 @@ function connect {
         fi
     done
 }
+
+# errors to null
+alias -g N='2>/dev/null'
+# pipe to less
+alias -g L='| less'
+# pipe to grep
+alias -g G='| grep'
+# show only first n lines
+alias -g H='| head -n '
+# show only last n lines
+alias -g T='| tail -n '
+# edit output in nvim
+alias -g V='> out && nvim out'
+

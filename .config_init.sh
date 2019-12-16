@@ -17,8 +17,10 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # To install black vim plugin properly
-cd ~/.local/share
-mkdir venv
-cd venv
+mkdir -p ~/.local/share/venv
+cd ~/.local/share/venv
 python3 -m venv black
 python3 -m pip install black
+
+# Ctags for tagbar
+sudo apt install universal-ctags

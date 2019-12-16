@@ -50,19 +50,41 @@ call plug#begin()
     Plug 'plasticboy/vim-markdown'
         let g:vim_markdown_folding_disabled = 1
 
-    Plug 'vim-syntastic/syntastic'
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
-        let g:syntastic_always_populate_loc_list = 1
-        let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 1
-        let g:syntastic_check_on_wq = 0
-        let g:syntastic_python_checkers = ['pylama']
+"   Plug 'vim-syntastic/syntastic'
+"       set statusline+=%#warningmsg#
+"       set statusline+=%{SyntasticStatuslineFlag()}
+"       set statusline+=%*
+"       let g:syntastic_always_populate_loc_list = 1
+"       let g:syntastic_auto_loc_list = 1
+"       let g:syntastic_check_on_open = 1
+"       let g:syntastic_check_on_wq = 0
+"       let g:syntastic_python_checkers = ['pylama']
 
-    Plug 'davidhalter/jedi-vim'
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+        let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+        let g:pymode_options_max_line_length = 120
+        let g:pymode_lint_unmodified = 1
+
+        let g:pymode_rope = 1
+        let g:pymode_rope_show_doc_bind = '<leader>d'
+        let g:pymode_rope_rename_bind = '<leader>rr'
+        let g:pymode_rope_organize_imports_bind = '<leader>ro'
+        let g:pymode_rope_rename_module_bind = '<leader>r1r'
+        let g:pymode_rope_module_to_package_bind = '<leader>r1p'
+        let g:pymode_rope_extract_method_bind = '<leader>rm'
+        let g:pymode_rope_extract_variable_bind = '<leader>rl'
+        let g:pymode_rope_use_function_bind = '<leader>ru'
+        let g:pymode_rope_goto_definition_bind = '<leader>g'
+        let g:pymode_rope_move_bind = '<leader>rv'
+        let g:pymode_rope_change_signature_bind = '<leader>rs'
+
+    Plug 'xolox/vim-misc'
+    Plug 'yzy-1/vim-easytags'
 
     Plug 'majutsushi/tagbar'
+        let g:tagbar_autoclose = 1
+        let g:tagbar_autofocus = 1
+        let g:tagbar_compact = 1
         nmap <leader>o :TagbarToggle<CR>
     
     Plug 'psf/black'
@@ -70,6 +92,8 @@ call plug#begin()
         let g:black_linelength = 120
         let g:black_skip_string_normalization = 1
         let g:black_virtualenv = '~/.local/share/venv/black'
+
+    Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 colorscheme afterglow
@@ -95,6 +119,13 @@ set scrolloff=10
 nmap <PageUp>   :bp<CR>
 nmap <PageDown> :bn<CR>
 nmap <leader>x  :bw<CR>
+nnoremap gb :ls<CR>:b<Space>
+
+" Windows
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
 
 set noswapfile
 set cursorline

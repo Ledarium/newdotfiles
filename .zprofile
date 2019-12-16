@@ -62,5 +62,6 @@ alias -g T='| tail -n '
 alias -g V='> out && nvim out'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs virtualenv)
 
 bindkey '^ ' autosuggest-accept

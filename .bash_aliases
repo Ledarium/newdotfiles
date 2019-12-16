@@ -1,4 +1,5 @@
 alias v=$EDITOR
+alias vc='nvim ~/.config/nvim/init.vim'
 #colored apps
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'

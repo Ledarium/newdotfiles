@@ -64,6 +64,12 @@ call plug#begin()
 
     Plug 'majutsushi/tagbar'
         nmap <leader>o :TagbarToggle<CR>
+    
+    Plug 'psf/black'
+        let g:black_fast = 0
+        let g:black_linelength = 120
+        let g:black_skip_string_normalization = 1
+        let g:black_virtualenv = '~/.local/share/venv/black'
 call plug#end()
 
 colorscheme afterglow

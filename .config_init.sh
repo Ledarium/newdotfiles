@@ -15,3 +15,10 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 # fzf. Ctrl-T to search
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+
+# To install black vim plugin properly
+cd ~/.local/share
+mkdir venv
+cd venv
+python3 -m venv black
+python3 -m pip install black

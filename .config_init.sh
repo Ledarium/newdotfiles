@@ -1,11 +1,18 @@
 #!/bin/sh
 
+cd ~
+
+# Ctags for tagbar
+sudo apt install zsh
+
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+rm .zshrc
+cp .zshrc.pre-oh-my-zsh .zshrc
 
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -27,3 +34,5 @@ sudo apt install universal-ctags
 
 # Pyenv
 curl https://pyenv.run | bash
+
+pip install virtualenvwrapper

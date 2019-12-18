@@ -24,3 +24,6 @@ python3 -m pip install black
 
 # Ctags for tagbar
 sudo apt install universal-ctags
+
+# Pyenv
+curl https://pyenv.run | bash

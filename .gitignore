@@ -6,3 +6,4 @@ env/share/
 .mypy_cache/
 pylama.ini
 __pycache__/
+.ropeproject/

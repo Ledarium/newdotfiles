@@ -1,4 +1,4 @@
-let mapleader = ','
+let mapleader = "\<Space>"
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
     echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -54,8 +54,8 @@ call plug#begin()
     Plug 'PieterjanMontens/vim-pipenv'
 
     Plug 'dense-analysis/ale'
-        let g:ale_set_loclist = 0
-        let g:ale_set_quickfix = 1
+        let g:ale_set_loclist = 1
+        let g:ale_set_quickfix = 0
         let g:ale_open_list = 1
         let g:airline#extensions#ale#enabled = 1
 
@@ -138,3 +138,8 @@ nnoremap <C-h> <C-W>h
 set noswapfile
 set cursorline
 set colorcolumn=120
+
+set ignorecase
+set smartcase
+
+autocmd BufWritePre *.py execute ':Black'

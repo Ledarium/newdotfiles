@@ -33,9 +33,9 @@ Nice, right? Now if you're moving to a virgin system…
 
 # Setup environment in a new computer
 
+Clone repository
 ```
-clone your github repository
-git clone --bare https://github.com/USERNAME/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:Ledarium/newdotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```

@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader = ','
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
     echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -50,22 +50,30 @@ call plug#begin()
     Plug 'plasticboy/vim-markdown'
         let g:vim_markdown_folding_disabled = 1
 
-"   Plug 'vim-syntastic/syntastic'
-"       set statusline+=%#warningmsg#
-"       set statusline+=%{SyntasticStatuslineFlag()}
-"       set statusline+=%*
-"       let g:syntastic_always_populate_loc_list = 1
-"       let g:syntastic_auto_loc_list = 1
-"       let g:syntastic_check_on_open = 1
-"       let g:syntastic_check_on_wq = 0
-"       let g:syntastic_python_checkers = ['pylama']
+    Plug 'jmcantrell/vim-virtualenv'
+    Plug 'PieterjanMontens/vim-pipenv'
+
+    Plug 'dense-analysis/ale'
+        let g:ale_set_loclist = 0
+        let g:ale_set_quickfix = 1
+        let g:ale_open_list = 1
+        let g:airline#extensions#ale#enabled = 1
+
+        let g:ale_linters = {'python': ['pylama', 'pyflakes']}
+        let g:ale_python_auto_pipenv = 1
+        let g:ale_linters_explicit = 1
+
+        "let g:ale_python_pylama_change_directory = 0
+        "let g:ale_python_pylama_options = '-o ~/.config/pylama.ini'
 
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-        let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+        "let g:pymode_lint_checkers = ['pylint']
         let g:pymode_options_max_line_length = 120
-        let g:pymode_lint_unmodified = 1
-
+        let g:pymode_lint_on_write = 0
+ 
         let g:pymode_rope = 1
+        let g:pymode_rope_lookup_project = 0
+ 
         let g:pymode_rope_show_doc_bind = '<leader>d'
         let g:pymode_rope_rename_bind = '<leader>rr'
         let g:pymode_rope_organize_imports_bind = '<leader>ro'

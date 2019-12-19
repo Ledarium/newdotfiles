@@ -42,6 +42,7 @@ call plug#begin()
         let g:tex_conceal='abdmg'
 
     Plug 'rafi/awesome-vim-colorschemes'
+    Plug 'arcticicestudio/nord-vim'
 
     Plug 'vim-airline/vim-airline'
         " Enable the list of buffers
@@ -107,7 +108,7 @@ call plug#begin()
     Plug 'tpope/vim-unimpaired'
 call plug#end()
 
-colorscheme afterglow
+colorscheme nord
 
 " syntax and plugins
 filetype plugin on

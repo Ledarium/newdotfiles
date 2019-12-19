@@ -36,10 +36,13 @@ sudo apt install universal-ctags
 # Pyenv
 curl https://pyenv.run | bash
 
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bash_aliases
-
+# Nord colorsheme for gnome-terminal
 cd ~/Downloads
 git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
 cd nord-gnome-terminal/src
 ./nord.sh
 
+# Tmux config
+cd ~
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf

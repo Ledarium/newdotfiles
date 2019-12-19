@@ -8,7 +8,7 @@ sudo apt install zsh trash-cli
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo pip3 install virtualenvwrapper pipenv
+sudo -H pip3 install virtualenvwrapper pipenv
 
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

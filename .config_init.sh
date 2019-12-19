@@ -2,14 +2,13 @@
 
 cd ~
 
-# Ctags for tagbar
-sudo apt install zsh
+sudo apt install zsh trash-cli
 
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo pip3 install virtualenvwrapper
+sudo pip3 install virtualenvwrapper pipenv
 
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

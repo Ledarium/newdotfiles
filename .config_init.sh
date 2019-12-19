@@ -9,6 +9,8 @@ sudo apt install zsh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+sudo pip3 install virtualenvwrapper
+
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 rm .zshrc
@@ -24,10 +26,10 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # To install black vim plugin properly
-mkdir -p ~/.local/share/venv
-cd ~/.local/share/venv
+mkdir -p ~/.local/share/virtualenvs
+cd ~/.local/share/virtualenvs
 python3 -m venv black
-python3 -m pip install black
+sudo python3 -m pip install black
 
 # Ctags for tagbar
 sudo apt install universal-ctags
@@ -35,4 +37,4 @@ sudo apt install universal-ctags
 # Pyenv
 curl https://pyenv.run | bash
 
-pip install virtualenvwrapper
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bash_aliases

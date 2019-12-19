@@ -99,7 +99,7 @@ call plug#begin()
         let g:black_fast = 0
         let g:black_linelength = 120
         let g:black_skip_string_normalization = 1
-        let g:black_virtualenv = '~/.local/share/venv/black'
+        let g:black_virtualenv = '~/.local/share/virtualenvs/black'
 
     Plug 'tpope/vim-unimpaired'
 call plug#end()

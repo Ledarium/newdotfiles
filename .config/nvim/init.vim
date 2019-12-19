@@ -44,7 +44,10 @@ call plug#begin()
     Plug 'rafi/awesome-vim-colorschemes'
 
     Plug 'vim-airline/vim-airline'
+        " Enable the list of buffers
         let g:airline#extensions#tabline#enabled = 1
+        " Show just the filename
+        let g:airline#extensions#tabline#fnamemod = ':t'
 
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
@@ -143,3 +146,19 @@ set ignorecase
 set smartcase
 
 autocmd BufWritePre *.py execute ':Black'
+
+set hidden
+
+" Close loclist when buffer is closed
+augroup CloseLoclistWindowGroup
+    autocmd!
+    autocmd QuitPre * if empty(&buftype) | lclose | endif
+augroup END
+
+" Tmux window title
+if exists('$TMUX')
+    autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+    autocmd VimLeave * call system("tmux setw automatic-rename")
+    autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+endif
+set title

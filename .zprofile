@@ -17,6 +17,11 @@ function launch-ssh-agent {
     ssh-add -l > /dev/null || ssh-add
 }
 
+# vi mode
+# https://dougblack.io/words/zsh-vi-mode.html
+# export KEYTIMEOUT=1
+bindkey -v
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -62,6 +67,7 @@ alias -g T='| tail -n '
 alias -g V='> out && nvim out'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs virtualenv vi_mode)
 
 bindkey '^ ' autosuggest-accept
+

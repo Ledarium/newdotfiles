@@ -59,6 +59,7 @@ plugins=(
     dircycle
     sudo
     web-search
+    vi-mode
 )
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 

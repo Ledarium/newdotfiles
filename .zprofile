@@ -67,7 +67,10 @@ alias -g T='| tail -n '
 alias -g V='> out && nvim out'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs virtualenv vi_mode)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv vi_mode)
+
+POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 bindkey '^ ' autosuggest-accept
 

@@ -75,7 +75,7 @@ call plug#begin()
         let g:pymode_options_max_line_length = 120
         let g:pymode_lint_on_write = 0
  
-        let g:pymode_rope = 1
+        let g:pymode_rope = 0
         let g:pymode_rope_lookup_project = 0
  
         let g:pymode_rope_show_doc_bind = '<leader>d'

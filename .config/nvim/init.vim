@@ -7,6 +7,8 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+    Plug 'farmergreg/vim-lastplace'
+
     Plug 'scrooloose/nerdtree'
         let NERDTreeShowHidden=1
 

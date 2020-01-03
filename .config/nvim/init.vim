@@ -72,6 +72,8 @@ call plug#begin()
         "let g:ale_python_pylama_change_directory = 0
         "let g:ale_python_pylama_options = '-o ~/.config/pylama.ini'
 
+    Plug 'davidhalter/jedi-vim'
+
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
         "let g:pymode_lint_checkers = ['pylint']
         let g:pymode_options_max_line_length = 120
@@ -79,6 +81,7 @@ call plug#begin()
  
         let g:pymode_rope = 0
         let g:pymode_rope_lookup_project = 0
+        let g:pymode_rope_completion = 0
  
         let g:pymode_rope_show_doc_bind = '<leader>d'
         let g:pymode_rope_rename_bind = '<leader>rr'
@@ -108,6 +111,10 @@ call plug#begin()
         let g:black_virtualenv = '~/.local/share/virtualenvs/black'
 
     Plug 'tpope/vim-unimpaired'
+
+    Plug 'brooth/far.vim'
+        set lazyredraw
+        set regexpengine=1
 call plug#end()
 
 colorscheme nord

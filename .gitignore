@@ -7,3 +7,5 @@ env/share/
 pylama.ini
 __pycache__/
 .ropeproject/
+Pipfile
+Pipfile.lock

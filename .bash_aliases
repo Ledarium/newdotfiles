@@ -45,5 +45,5 @@ alias show_machines='curl "http://10.10.12.251/machines?subnet=test-204"'
 alias mnt_tmp='sudo vmhgfs-fuse .host:/tmp /mnt/hgfs/tmp/ -o allow_other -o uid=1000'
 alias mnt_study='sudo vmhgfs-fuse .host:/study /mnt/hgfs/study/ -o allow_other -o uid=1000'
 
-alias ff='grep --exclude-dir={.mypy_cache,.ropeproject} -rnw . -B 5 -A 5 -e'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias tmux_work='tmux new-session -A -s main'

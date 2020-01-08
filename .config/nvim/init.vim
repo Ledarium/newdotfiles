@@ -98,6 +98,8 @@ call plug#begin()
     Plug 'xolox/vim-misc'
     Plug 'yzy-1/vim-easytags'
 
+    Plug 'vimwiki/vimwiki'
+
     Plug 'majutsushi/tagbar'
         let g:tagbar_autoclose = 1
         let g:tagbar_autofocus = 1
@@ -155,7 +157,7 @@ set colorcolumn=120
 set ignorecase
 set smartcase
 
-autocmd BufWritePre *.py execute ':Black'
+"autocmd BufWritePre *.py execute ':Black'
 
 set hidden
 

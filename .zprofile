@@ -74,3 +74,4 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 bindkey '^ ' autosuggest-accept
 
+eval $(keychain --eval --agents ssh -Q --quiet id_ed25519)

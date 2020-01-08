@@ -2,7 +2,7 @@
 
 cd ~
 
-sudo apt install zsh trash-cli
+sudo apt install zsh trash-cli keychain universal-ctags
 
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -29,9 +29,6 @@ mkdir -p ~/.local/share/virtualenvs
 cd ~/.local/share/virtualenvs
 python3 -m venv black
 sudo python3 -m pip install black
-
-# Ctags for tagbar
-sudo apt install universal-ctags
 
 # Pyenv
 curl https://pyenv.run | bash

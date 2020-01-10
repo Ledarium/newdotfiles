@@ -64,6 +64,7 @@ call plug#begin()
         let g:ale_set_quickfix = 0
         let g:ale_open_list = 1
         let g:airline#extensions#ale#enabled = 1
+        let g:ale_list_window_size = 5
 
         let g:ale_linters = {'python': ['pylama', 'pyflakes']}
         let g:ale_python_auto_pipenv = 1

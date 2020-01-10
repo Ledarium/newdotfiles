@@ -53,6 +53,11 @@ function connect {
     done
 }
 
+function tconnect {
+    sshpass -p 12345678 ./scripts/manage_tools/transfer.sh $1
+    connect $1
+}
+
 # errors to null
 alias -g N='2>/dev/null'
 # pipe to less

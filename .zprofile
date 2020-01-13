@@ -41,15 +41,23 @@ export HOSTCXX="ccache g++"
 export CCACHE_DIR="~/.ccache"
 
 function connect {
-    for user in root admin serviceuser
+    while true
     do
-        echo "Trying to connect as '$user'"
-        sshpass -p 12345678 ssh  -o "StrictHostKeyChecking=no" -q $user@$1
-        exit_code=$?
+        for user in root admin serviceuser
+        do
+            echo "Trying to connect as '$user'"
+            sshpass -p 12345678 ssh  -o "StrictHostKeyChecking=no" -q $user@$1
+            exit_code=$?
+            if [ $exit_code -eq 0 ]
+            then
+                break
+            fi
+        done
         if [ $exit_code -eq 0 ]
         then
             break
         fi
+        sleep 1
     done
 }
 

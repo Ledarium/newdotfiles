@@ -11,23 +11,21 @@ call plug#begin()
 
     Plug 'scrooloose/nerdtree'
         let NERDTreeShowHidden=1
-
         " open a NERDTree automatically when vim starts up if no files were specified
         autocmd StdinReadPre * let s:std_in=1
         autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
         " Tab to open/close nerdtree
         nnoremap <silent> <expr> <Tab> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
-
         " Quit after opening file
         let NERDTreeQuitOnOpen = 1
-
         " close a tab if the only remaining window is NerdTree (also taken from the Readme):
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
     Plug 'easymotion/vim-easymotion'
+
+    Plug 'tpope/vim-fugitive'
 
     Plug 'lervag/vimtex'
         let g:tex_flavor='latex'
@@ -62,7 +60,7 @@ call plug#begin()
     Plug 'dense-analysis/ale'
         let g:ale_set_loclist = 1
         let g:ale_set_quickfix = 0
-        let g:ale_open_list = 1
+        let g:ale_open_list = 0
         let g:airline#extensions#ale#enabled = 1
         let g:ale_list_window_size = 5
 
@@ -122,6 +120,12 @@ call plug#end()
 
 colorscheme nord
 
+" folding
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " syntax and plugins
 filetype plugin on
 syntax on
@@ -158,7 +162,7 @@ set colorcolumn=120
 set ignorecase
 set smartcase
 
-"autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Black'
 
 set hidden
 

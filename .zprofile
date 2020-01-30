@@ -66,6 +66,24 @@ function tconnect {
     connect $1
 }
 
+function diagram -d "Get classes diagram for python files" -w pyreverse {
+    set dotfile "classes.dot"
+    set pngfile "classes.png"
+    pyreverse $argv
+    if test $status != 0
+    then
+        return
+    fi
+
+    if test -f $dotfile
+    then
+        dot -Tpng:cairo:gd $dotfile -o $pngfile;
+        xdg-open $pngfile;
+        rm $dotfile;
+        rm -i $pngfile;
+    fi
+}
+
 # errors to null
 alias -g N='2>/dev/null'
 # pipe to less

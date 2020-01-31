@@ -84,6 +84,12 @@ function diagram -d "Get classes diagram for python files" -w pyreverse {
     fi
 }
 
+function upload_py {
+  for host in $argv; do
+    eval "sshpass -p 12345678 ~/projects/mprdaemon/scripts/manage_tools/transfer.sh $host"
+  done
+}
+
 # errors to null
 alias -g N='2>/dev/null'
 # pipe to less

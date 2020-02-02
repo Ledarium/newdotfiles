@@ -41,9 +41,11 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-alias show_machines='curl "http://10.10.12.251/machines?subnet=test-204"'
 alias mnt_tmp='sudo vmhgfs-fuse .host:/tmp /mnt/hgfs/tmp/ -o allow_other -o uid=1000'
 alias mnt_study='sudo vmhgfs-fuse .host:/study /mnt/hgfs/study/ -o allow_other -o uid=1000'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias tmux_work='tmux new-session -A -s main'
+
+alias show_machines="curl 'http://10.10.12.251/machines?subnet=test-204'"
+alias show_ips="show_machines | grep -E -o '|\s*test-204.*\ ([0-9]{1,3}[\.]){3}[0-9]{1,3}\ '"

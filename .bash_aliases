@@ -19,6 +19,10 @@ alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=au
 alias lla='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -a --group-directories-first --color=auto -F'
 
+alias t="tmux -2"
+alias ta="t attach"
+alias tn="t new-session -A -s"
+
 alias g="git"
 alias gc="git commit"
 alias gca="git commit --amend"

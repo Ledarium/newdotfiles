@@ -9,17 +9,10 @@ endif
 call plug#begin()
     Plug 'farmergreg/vim-lastplace'
 
-    Plug 'scrooloose/nerdtree'
-        let NERDTreeShowHidden=1
-        " open a NERDTree automatically when vim starts up if no files were specified
-        autocmd StdinReadPre * let s:std_in=1
-        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-        " Tab to open/close nerdtree
-        nnoremap <silent> <expr> <Tab> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
-        " Quit after opening file
-        let NERDTreeQuitOnOpen = 1
-        " close a tab if the only remaining window is NerdTree (also taken from the Readme):
-        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    Plug 'ctrlpvim/ctrlp.vim'
+        let g:ctrlp_map = '<tab>'
+        " Ignore files in .gitignore
+        let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
     Plug 'Xuyuanp/nerdtree-git-plugin'
 

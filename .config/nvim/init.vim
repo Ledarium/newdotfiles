@@ -10,11 +10,9 @@ call plug#begin()
     Plug 'farmergreg/vim-lastplace'
 
     Plug 'ctrlpvim/ctrlp.vim'
-        let g:ctrlp_map = '<tab>'
+        let g:ctrlp_map = '<c-p>'
         " Ignore files in .gitignore
         let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-    Plug 'Xuyuanp/nerdtree-git-plugin'
 
     Plug 'easymotion/vim-easymotion'
 

@@ -22,6 +22,7 @@ alias la='ls -a --group-directories-first --color=auto -F'
 alias t="tmux -2"
 alias ta="t attach"
 alias tn="t new-session -A -s"
+alias tl="t list-sessions"
 
 alias g="git"
 alias gc="git commit"

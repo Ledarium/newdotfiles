@@ -86,14 +86,13 @@ function diagram -d "Get classes diagram for python files" -w pyreverse {
 
 function upload_py {
     cd ~/projects/mprdaemon
-    VERSION="`git log -1 --pretty='%h %B'` `date`"
-    g diff HEAD > /tmp/diff
+    git log -1 --pretty='%h %B' > /tmp/version
+    date >> /tmp/version
+    g diff HEAD >> /tmp/version
     for host in $argv; do
-        sshpass -p 12345678 scp /tmp/diff root@$host:/root/diff
+        sshpass -p 12345678 scp /tmp/version root@$host:/root/version
         sshpass -p 12345678 scripts/manage_tools/transfer.sh $host
         sleep 1
-        sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -t root@$host \
-            'echo '$VERSION' > /root/VERSION'
         sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -t root@$host \
             'bash -ic "clear_logs; install_py --clear-py --clear-xml -r $HOSTNAME; mprd_restart; exit"'
     done

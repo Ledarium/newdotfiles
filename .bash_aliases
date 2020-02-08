@@ -26,6 +26,7 @@ alias tl="t list-sessions"
 
 alias g="git"
 alias gc="git commit"
+alias gd="git diff HEAD"
 alias gca="git commit --amend"
 alias grb="git rebase"
 alias grbi="git rebase --interactive"

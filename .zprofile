@@ -90,7 +90,7 @@ function upload_py {
     date >> /tmp/version
     g diff HEAD >> /tmp/version
     for host in $argv; do
-        sshpass -p 12345678 scp /tmp/version root@$host:/root/version
+        sshpass -p 12345678 scp /tmp/version root@$host:/root/version.diff
         sshpass -p 12345678 scripts/manage_tools/transfer.sh $host
         sleep 1
         sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -t root@$host \
@@ -117,6 +117,9 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv vi_mode)
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
+# c-space to complete
 bindkey '^ ' autosuggest-accept
+# right arrow to complete
+bindkey '^[[C' autosuggest-accept
 
 eval $(keychain --eval --agents ssh -Q --quiet id_ed25519)

@@ -60,6 +60,7 @@ plugins=(
     sudo
     web-search
     vi-mode
+    safe-paste
 )
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 

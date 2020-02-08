@@ -122,4 +122,12 @@ bindkey '^ ' autosuggest-accept
 # right arrow to complete
 bindkey '^[[C' autosuggest-accept
 
+# https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
 eval $(keychain --eval --agents ssh -Q --quiet id_ed25519)

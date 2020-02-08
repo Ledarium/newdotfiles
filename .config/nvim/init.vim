@@ -51,7 +51,7 @@ call plug#begin()
     Plug 'dense-analysis/ale'
         let g:ale_set_loclist = 1
         let g:ale_set_quickfix = 0
-        let g:ale_open_list = 0
+        let g:ale_open_list = 1
         let g:airline#extensions#ale#enabled = 1
         let g:ale_list_window_size = 5
 
@@ -157,10 +157,10 @@ autocmd BufWritePre *.py execute ':Black'
 
 set hidden
 
-" Close loclist when buffer is closed
-augroup CloseLoclistWindowGroup
+"" Close loclist when buffer is closed
+augroup autoclose
     autocmd!
-    autocmd QuitPre * if empty(&buftype) | lclose | endif
+    autocmd QuitPre * if &filetype !=# 'qf' | lclose | endif
 augroup END
 
 " Tmux window title

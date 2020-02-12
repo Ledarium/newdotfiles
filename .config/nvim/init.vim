@@ -15,6 +15,7 @@ call plug#begin()
         let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
     Plug 'easymotion/vim-easymotion'
+    Plug 'chaoren/vim-wordmotion'
 
     Plug 'tpope/vim-fugitive'
 
@@ -107,6 +108,12 @@ call plug#begin()
     Plug 'brooth/far.vim'
         set lazyredraw
         set regexpengine=1
+
+    Plug 'junegunn/vim-easy-align'
+        " Start interactive EasyAlign in visual mode (e.g. vipga)
+		xmap ga <Plug>(EasyAlign)
+		" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+		nmap ga <Plug>(EasyAlign)<Paste>
 call plug#end()
 
 colorscheme nord
@@ -156,6 +163,13 @@ set smartcase
 autocmd BufWritePre *.py execute ':Black'
 
 set hidden
+
+"This allows for change paste motion cp{motion}
+nmap <silent> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+    silent exe "normal! `[v`]\"_c"
+    silent exe "normal! p"
+endfunction
 
 "" Close loclist when buffer is closed
 augroup autoclose

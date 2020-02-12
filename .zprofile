@@ -87,6 +87,7 @@ function diagram -d "Get classes diagram for python files" -w pyreverse {
 function upload_py {
     cd ~/projects/mprdaemon
     git log -1 --pretty='%h %B' > /tmp/version
+    echo On branch `git rev-parse --abbrev-ref HEAD` >> /tmp/version
     date >> /tmp/version
     g diff HEAD >> /tmp/version
     for host in $argv; do

@@ -18,6 +18,7 @@ call plug#begin()
     Plug 'chaoren/vim-wordmotion'
 
     Plug 'tpope/vim-fugitive'
+    Plug 'idanarye/vim-merginal'
 
     Plug 'lervag/vimtex'
         let g:tex_flavor='latex'
@@ -98,9 +99,7 @@ call plug#begin()
         nmap <leader>o :TagbarToggle<CR>
     
     Plug 'psf/black'
-        let g:black_fast = 0
-        let g:black_linelength = 120
-        let g:black_skip_string_normalization = 1
+        let g:black_fast = 1
         let g:black_virtualenv = '~/.local/share/virtualenvs/black'
 
     Plug 'tpope/vim-unimpaired'
@@ -155,7 +154,7 @@ nnoremap <C-h> <C-W>h
 
 set noswapfile
 set cursorline
-set colorcolumn=120
+set colorcolumn=88
 
 set ignorecase
 set smartcase

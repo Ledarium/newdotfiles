@@ -95,7 +95,7 @@ function upload_py {
         sshpass -p 12345678 scripts/manage_tools/transfer.sh $host
         sleep 1
         sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -t root@$host \
-            'bash -ic "clear_logs; install_py --clear-py --clear-xml -r $HOSTNAME; mprd_restart; exit"'
+            'bash -ic "clear_logs; install_py --debug --clear-py --clear-xml -r $HOSTNAME; mprd_restart; exit"'
     done
 }
 

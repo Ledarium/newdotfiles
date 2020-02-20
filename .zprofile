@@ -99,6 +99,16 @@ function upload_py {
     done
 }
 
+function fix_machines {
+    for host in $argv; do
+        sshpass -p 12345678 ssh root@$host <<-'ENDSSH'
+            hostname vmmandmpls
+            mkdir /usr/lib/python3.6/mprdaemon
+            mkdir /usr/share/mprdaemon/cli
+        ENDSSH
+    done
+}
+
 # errors to null
 alias -g N='2>/dev/null'
 # pipe to less

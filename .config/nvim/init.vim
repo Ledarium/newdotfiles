@@ -18,6 +18,10 @@ call plug#begin()
     Plug 'chaoren/vim-wordmotion'
 
     Plug 'tpope/vim-fugitive'
+        " Fugitive Conflict Resolution
+        nnoremap <leader>gd :Gvdiffsplit!<CR>
+        nnoremap gdh :diffget //2<CR>
+        nnoremap gdl :diffget //3<CR>
     Plug 'idanarye/vim-merginal'
 
     Plug 'lervag/vimtex'
@@ -103,10 +107,10 @@ call plug#begin()
         let g:black_virtualenv = '~/.local/share/virtualenvs/black'
 
     Plug 'tpope/vim-unimpaired'
-
-    Plug 'brooth/far.vim'
-        set lazyredraw
-        set regexpengine=1
+"
+"   Plug 'brooth/far.vim'
+"       set lazyredraw
+"       set regexpengine=1
 
     Plug 'junegunn/vim-easy-align'
         " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -129,6 +133,8 @@ syntax on
 
 set encoding=utf-8
 set number relativenumber
+set numberwidth=3
+:nmap <C-N><C-N> :set nu!<CR>:set relativenumber!<CR>
 
 "tabs
 set tabstop=4

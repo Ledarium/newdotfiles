@@ -102,9 +102,10 @@ call plug#begin()
         let g:tagbar_compact = 1
         nmap <leader>o :TagbarToggle<CR>
     
-    Plug 'psf/black'
+    Plug 'psf/black', { 'for': 'python' }
         let g:black_fast = 1
         let g:black_virtualenv = '~/.local/share/virtualenvs/black'
+    Plug 'fisadev/vim-isort', { 'for': 'python' }
 
     Plug 'tpope/vim-unimpaired'
 "
@@ -162,10 +163,11 @@ set noswapfile
 set cursorline
 set colorcolumn=88
 
+autocmd BufWritePre *.py execute ':Isort'
+autocmd BufWritePre *.py execute ':Black'
+
 set ignorecase
 set smartcase
-
-autocmd BufWritePre *.py execute ':Black'
 
 set hidden
 

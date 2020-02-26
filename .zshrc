@@ -57,7 +57,6 @@ plugins=(
     extract
     systemd
     dircycle
-    sudo
     web-search
     vi-mode
     safe-paste

@@ -101,11 +101,11 @@ function upload_py {
 
 function fix_machines {
     for host in $argv; do
-        sshpass -p 12345678 ssh root@$host <<-'ENDSSH'
-            hostname vmmandmpls
-            mkdir /usr/lib/python3.6/mprdaemon
-            mkdir /usr/share/mprdaemon/cli
-        ENDSSH
+sshpass -p 12345678 ssh root@$host <<'ENDSSH'
+hostname vmmandmpls
+mkdir /usr/lib/python3.6/mprdaemon
+mkdir /usr/share/mprdaemon/cli
+ENDSSH
     done
 }
 

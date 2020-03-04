@@ -72,7 +72,7 @@ call plug#begin()
 
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
         "let g:pymode_lint_checkers = ['pylint']
-        let g:pymode_options_max_line_length = 120
+        let g:pymode_options_max_line_length = 88
         let g:pymode_lint_on_write = 0
  
         let g:pymode_rope = 0
@@ -163,7 +163,6 @@ set noswapfile
 set cursorline
 set colorcolumn=88
 
-autocmd BufWritePre *.py execute ':Isort'
 autocmd BufWritePre *.py execute ':Black'
 
 set ignorecase

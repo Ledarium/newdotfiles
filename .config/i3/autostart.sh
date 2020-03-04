@@ -1,5 +1,5 @@
 #!/bin/sh
-setxkbmap -layout "us,ru" -variant ",typewriter" -option grp:shift_caps_switch &
+setxkbmap -layout "us,ru" -option grp:win_space_toggle &
 nm-applet &
 sleep 3
 xdg-open http:// &

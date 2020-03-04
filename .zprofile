@@ -130,8 +130,6 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 # c-space to complete
 bindkey '^ ' autosuggest-accept
-# right arrow to complete
-bindkey '^[[C' autosuggest-accept
 
 # https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
 autoload -U up-line-or-beginning-search

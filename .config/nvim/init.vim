@@ -57,7 +57,7 @@ call plug#begin()
     Plug 'dense-analysis/ale'
         let g:ale_set_loclist = 1
         let g:ale_set_quickfix = 0
-        let g:ale_open_list = 1
+        let g:ale_open_list = 0
         let g:airline#extensions#ale#enabled = 1
         let g:ale_list_window_size = 5
 
@@ -68,28 +68,33 @@ call plug#begin()
         "let g:ale_python_pylama_change_directory = 0
         "let g:ale_python_pylama_options = '-o ~/.config/pylama.ini'
 
+    Plug 'Valloric/ListToggle'
+        let g:lt_location_list_toggle_map = '<leader>l'
+        let g:lt_quickfix_list_toggle_map = '<leader>q'
+        let g:lt_height = 10
+
     Plug 'davidhalter/jedi-vim'
 
-    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-        "let g:pymode_lint_checkers = ['pylint']
-        let g:pymode_options_max_line_length = 120
-        let g:pymode_lint_on_write = 0
+    "Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+    "    "let g:pymode_lint_checkers = ['pylint']
+    "    let g:pymode_options_max_line_length = 88
+    "    let g:pymode_lint_on_write = 0
  
-        let g:pymode_rope = 0
-        let g:pymode_rope_lookup_project = 0
-        let g:pymode_rope_completion = 0
+    "    let g:pymode_rope = 0
+    "    let g:pymode_rope_lookup_project = 0
+    "    let g:pymode_rope_completion = 0
  
-        let g:pymode_rope_show_doc_bind = '<leader>d'
-        let g:pymode_rope_rename_bind = '<leader>rr'
-        let g:pymode_rope_organize_imports_bind = '<leader>ro'
-        let g:pymode_rope_rename_module_bind = '<leader>r1r'
-        let g:pymode_rope_module_to_package_bind = '<leader>r1p'
-        let g:pymode_rope_extract_method_bind = '<leader>rm'
-        let g:pymode_rope_extract_variable_bind = '<leader>rl'
-        let g:pymode_rope_use_function_bind = '<leader>ru'
-        let g:pymode_rope_goto_definition_bind = '<leader>g'
-        let g:pymode_rope_move_bind = '<leader>rv'
-        let g:pymode_rope_change_signature_bind = '<leader>rs'
+    "    let g:pymode_rope_show_doc_bind = '<leader>d'
+    "    let g:pymode_rope_rename_bind = '<leader>rr'
+    "    let g:pymode_rope_organize_imports_bind = '<leader>ro'
+    "    let g:pymode_rope_rename_module_bind = '<leader>r1r'
+    "    let g:pymode_rope_module_to_package_bind = '<leader>r1p'
+    "    let g:pymode_rope_extract_method_bind = '<leader>rm'
+    "    let g:pymode_rope_extract_variable_bind = '<leader>rl'
+    "    let g:pymode_rope_use_function_bind = '<leader>ru'
+    "    let g:pymode_rope_goto_definition_bind = '<leader>g'
+    "    let g:pymode_rope_move_bind = '<leader>rv'
+    "    let g:pymode_rope_change_signature_bind = '<leader>rs'
 
     Plug 'xolox/vim-misc'
     Plug 'yzy-1/vim-easytags'
@@ -133,7 +138,7 @@ filetype plugin on
 syntax on
 
 set encoding=utf-8
-set number relativenumber
+set nonumber norelativenumber
 set numberwidth=3
 :nmap <C-N><C-N> :set nu!<CR>:set relativenumber!<CR>
 
@@ -163,7 +168,6 @@ set noswapfile
 set cursorline
 set colorcolumn=88
 
-autocmd BufWritePre *.py execute ':Isort'
 autocmd BufWritePre *.py execute ':Black'
 
 set ignorecase

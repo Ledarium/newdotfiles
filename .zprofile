@@ -6,7 +6,6 @@
 #export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 export EDITOR=nvim
 export VISUAL=nvim
-export MYTEX_DIR=~/tex
 
 function launch-ssh-agent {
     if [ ! -S ~/.ssh/ssh_auth_sock ]; then
@@ -109,6 +108,10 @@ ENDSSH
     done
 }
 
+function bindiff {
+    colordiff <(xxd $1) <(xxd $2)
+}
+
 # errors to null
 alias -g N='2>/dev/null'
 # pipe to less
@@ -130,8 +133,6 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 # c-space to complete
 bindkey '^ ' autosuggest-accept
-# right arrow to complete
-bindkey '^[[C' autosuggest-accept
 
 # https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
 autoload -U up-line-or-beginning-search

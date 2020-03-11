@@ -6,6 +6,7 @@ snippet -с "Статья" bA
 	year = 		    {$5},
 	number =        {$6},
 	url =           {$7},
+	urldate =		{`date +%F`},
 	langid =        "russian"
 }
 
@@ -32,7 +33,8 @@ snippet -и "Интернетик" bA
 	author =        {$2},
 	title = 		{$3},
 	url =	 	    {$4},
-	date =		 	{`date +%F`}
+	date =		 	{`date +%F`},
+	langid =        "russian"
 }
 
 $0
@@ -43,7 +45,8 @@ snippet -в "вики" bA
 	author =        {Википедия},
 	title = 		{$3},
 	url =	 	    {$4},
-	date =		 	{`date +%F`}
+	date =		 	{`date +%F`},
+	langid =        "russian"
 }
 
 $0
@@ -54,7 +57,8 @@ snippet -д "Документация" bA
 	heading =       {$2},
 	title = 		{$3},
 	url =	 	    {$4},
-	date =		 	{`date +%F`}
+	urldate =		{`date +%F`},
+	langid =        "russian"
 }
 
 $0
@@ -66,7 +70,8 @@ snippet -г "ГОСТ" bA
 	title = 		{$3},
 	publisher = 	{Стандартинформ},
 	address =       {М.},
-	year = 		    {2019}
+	year = 		    {2019},
+	langid =        "russian"
 }
 
 $0

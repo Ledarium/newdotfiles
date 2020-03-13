@@ -51,8 +51,8 @@ call plug#begin()
     Plug 'plasticboy/vim-markdown'
         let g:vim_markdown_folding_disabled = 1
 
-    Plug 'jmcantrell/vim-virtualenv'
-    Plug 'PieterjanMontens/vim-pipenv'
+"   Plug 'jmcantrell/vim-virtualenv'
+"   Plug 'PieterjanMontens/vim-pipenv'
 
     Plug 'dense-analysis/ale'
         let g:ale_set_loclist = 1
@@ -123,9 +123,17 @@ call plug#begin()
 		xmap ga <Plug>(EasyAlign)
 		" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 		nmap ga <Plug>(EasyAlign)<Paste>
+
+    Plug 'xolox/vim-session'
+        let g:session_autosave = 'yes'
+        let g:session_autoload = 'yes'
+        let g:session_default_to_last = 'yes'
+        
 call plug#end()
 
 colorscheme nord
+
+set sessionoptions-=help
 
 " folding
 set foldmethod=indent   

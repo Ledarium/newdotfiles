@@ -165,6 +165,8 @@ nmap <PageUp>   :bp<CR>
 nmap <PageDown> :bn<CR>
 nmap <leader>x  :bw<CR>
 nnoremap gb :ls<CR>:b<Space>
+"Tab to open buffer menu
+set wildchar=<Tab> wildmenu wildmode=full
 
 " Windows
 nnoremap <C-j> <C-W>j
@@ -203,3 +205,4 @@ if exists('$TMUX')
     autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 endif
 set title
+

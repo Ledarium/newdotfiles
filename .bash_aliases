@@ -54,5 +54,8 @@ alias mnt_study='sudo vmhgfs-fuse .host:/study /mnt/hgfs/study/ -o allow_other -
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias tmux_work='tmux new-session -A -s main'
 
+c() { [[ -d "$1" ]] && cd "$1"||cd .. ; ls -cBtr --color=force; }
+
 alias show_machines="curl 'http://10.10.12.251/machines?subnet=test-204'"
 alias show_ips="show_machines | grep -E -o '|\s*test-204.*\ ([0-9]{1,3}[\.]){3}[0-9]{1,3}\ '"
+

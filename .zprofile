@@ -131,8 +131,10 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv vi_mode)
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
+#ZSH_AUTOSUGGEST_USE_ASYNC=true
+
 # c-space to complete
-bindkey '^ ' autosuggest-accept
+#bindkey '^ ' autosuggest-accept
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down

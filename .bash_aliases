@@ -39,6 +39,8 @@ alias gh='git hist'
 alias gha='git hist --all'
 alias go='git checkout'
 
+alias gp='git push --set-upstream origin'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'

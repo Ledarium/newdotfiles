@@ -71,24 +71,25 @@ snippet сми "источник" w
 endsnippet
 
 snippet смф "См. формулу" w
-(см. формулу \ref{eqn:$1})$0
+(см. формулу~\ref{eqn:$1})$0
 endsnippet
 
 snippet смт "См. таблицу" w
-(см. таблицу \ref{tab:$1})$0
+(см. таблицу~\ref{tab:$1})$0
 endsnippet
 
 snippet смр "См. рисунок" w
-(см. рисунок \ref{pic:$1})$0
+(см. рисунок~\ref{pic:$1})$0
 endsnippet
 
 # Environments
 snippet тб "Table environment" b
-\begin{table}[${1:htpb}]
+\begin{table}[${1:h}]
 	\centering
 	\caption{${2:caption}}
 	\label{tab:${3:label}}
 	\begin{tabularx}{\linewidth}{${4:c}}
+    \begin{tabu}to \linewidth{${4:XX}}
 		\toprule
 		$0
 		\bottomrule
@@ -98,7 +99,7 @@ snippet тб "Table environment" b
 endsnippet
 
 snippet рс "Figure environment" b
-\begin{figure}[${1:htpb}]
+\begin{figure}[${1:h}]
 	\center
 	\includegraphics[height=${2:5}cm]{$3}
 	\caption{$4}

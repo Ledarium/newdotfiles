@@ -3,8 +3,8 @@
     name = Dmitry Maylarov
     signingkey = maylarov@yandex.ru
 [core]
-    autocrlf = input
-    safecrlf = true
+	autocrlf = false
+	safecrlf = false
     excludesfile = ~/.gitignore
 [alias]
     co = checkout

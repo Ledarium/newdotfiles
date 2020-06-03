@@ -2,13 +2,13 @@
 
 cd ~
 
-sudo apt install zsh trash-cli keychain universal-ctags
+sudo apt install tmux zsh trash-cli keychain universal-ctags python3-pip
 
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo -H pip3 install virtualenvwrapper pipenv
+sudo -H python3 -m pip install virtualenvwrapper pipenv
 
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

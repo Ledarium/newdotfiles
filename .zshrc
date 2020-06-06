@@ -59,7 +59,6 @@ plugins=(
     dircycle
     web-search
     vi-mode
-    safe-paste
     history-substring-search
 )
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/

@@ -2,7 +2,7 @@
 
 cd ~
 
-sudo apt install tmux zsh trash-cli keychain universal-ctags python3-pip
+#sudo apt install tmux zsh trash-cli keychain universal-ctags python3-pip
 
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

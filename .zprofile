@@ -117,7 +117,7 @@ alias -g N='2>/dev/null'
 # pipe to less
 alias -g L='| less'
 # pipe to grep
-alias -g G='| grep'
+alias -g G='| rg'
 # show only first n lines
 alias -g H='| head -n '
 # show only last n lines

@@ -26,6 +26,8 @@ font xft:Noto Sans 0
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
+bindsym Ctrl+1 exec ~/.config/i3/i3-keyboard-layout set us
+bindsym Ctrl+2 exec ~/.config/i3/i3-keyboard-layout set ru
 ##############################
 # Start Applications
 # 
@@ -234,7 +236,7 @@ exec --no-startup-id ~/.config/i3/autostart.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	status_command py3status -c ~/.config/i3/i3status.conf
+	status_command py3status -c ~/.config/i3/i3status.conf | ~/.config/i3/i3-keyboard-layout i3status
 	position top
 	mode hide
 

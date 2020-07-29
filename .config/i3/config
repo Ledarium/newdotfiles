@@ -122,10 +122,10 @@ set $ws1 1:q
 set $ws2 2:w
 set $ws3 3:e
 set $ws4 4:r
-set $ws5 5:t
-set $ws6 6:y
-set $ws7 7:u
-set $ws8 8:i
+set $ws5 5:u
+set $ws6 6:i
+set $ws7 7:o
+set $ws8 8:p
 
 set $left DVI-D-0
 set $right VGA-0
@@ -143,30 +143,30 @@ bindsym $mod+q workspace $ws1
 bindsym $mod+w workspace $ws2
 bindsym $mod+e workspace $ws3
 bindsym $mod+r workspace $ws4
-bindsym $mod+t workspace $ws5
-bindsym $mod+y workspace $ws6
-bindsym $mod+u workspace $ws7
-bindsym $mod+i workspace $ws8
+bindsym $mod+u workspace $ws5
+bindsym $mod+i workspace $ws6
+bindsym $mod+o workspace $ws7
+bindsym $mod+p workspace $ws8
 
 # Move focused container to workspace
 bindsym $mod+Shift+q move container to workspace $ws1
 bindsym $mod+Shift+w move container to workspace $ws2
 bindsym $mod+Shift+e move container to workspace $ws3
 bindsym $mod+Shift+r move container to workspace $ws4
-bindsym $mod+Shift+t move container to workspace $ws5
-bindsym $mod+Shift+y move container to workspace $ws6
-bindsym $mod+Shift+u move container to workspace $ws7
-bindsym $mod+Shift+i move container to workspace $ws8
+bindsym $mod+Shift+u move container to workspace $ws5
+bindsym $mod+Shift+i move container to workspace $ws6
+bindsym $mod+Shift+o move container to workspace $ws7
+bindsym $mod+Shift+p move container to workspace $ws8
 
 # Move to workspace with focused container
 bindsym $mod+Ctrl+q move container to workspace $ws1; workspace $ws1
 bindsym $mod+Ctrl+w move container to workspace $ws2; workspace $ws2
 bindsym $mod+Ctrl+e move container to workspace $ws3; workspace $ws3
 bindsym $mod+Ctrl+r move container to workspace $ws4; workspace $ws4
-bindsym $mod+Ctrl+t move container to workspace $ws5; workspace $ws5
-bindsym $mod+Ctrl+y move container to workspace $ws6; workspace $ws6
-bindsym $mod+Ctrl+u move container to workspace $ws7; workspace $ws7
-bindsym $mod+Ctrl+i move container to workspace $ws8; workspace $ws8
+bindsym $mod+Ctrl+u move container to workspace $ws5; workspace $ws5
+bindsym $mod+Ctrl+i move container to workspace $ws6; workspace $ws6
+bindsym $mod+Ctrl+o move container to workspace $ws7; workspace $ws7
+bindsym $mod+Ctrl+p move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 assign [class="TelegramDesktop"] $ws4

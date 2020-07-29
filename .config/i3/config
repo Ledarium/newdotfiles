@@ -26,65 +26,94 @@ font xft:Noto Sans 12
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-bindsym Ctrl+1 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru"
-bindsym Ctrl+2 exec --no-startup-id "setxkbmap -model pc105 -layout ru,us"
+#-- bindsym Ctrl+1 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru"
+bindcode Ctrl+10 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru"
+#-- bindsym Ctrl+2 exec --no-startup-id "setxkbmap -model pc105 -layout ru,us"
+bindcode Ctrl+11 exec --no-startup-id "setxkbmap -model pc105 -layout ru,us"
 ##############################
 # Start Applications
 # 
 # start a terminal
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $retro_term
+#-- bindsym $mod+Return exec $term
+bindcode $mod+36 exec $term
+#-- bindsym $mod+Shift+Return exec $retro_term
+bindcode $mod+Shift+36 exec $retro_term
 
 # start program launcher
-bindsym $mod+z exec --no-startup-id dmenu_run
+#-- bindsym $mod+z exec --no-startup-id dmenu_run
+bindcode $mod+52 exec --no-startup-id dmenu_run
 
-bindsym $mod+F1 exec telegram-desktop
-bindsym $mod+F2 exec xdg-open http://
-bindsym $mod+F3 exec $app_term -e ranger
-bindsym $mod+F4 exec $app_term -e sudo ranger
+#-- bindsym $mod+F1 exec telegram-desktop
+bindcode $mod+67 exec telegram-desktop
+#-- bindsym $mod+F2 exec xdg-open http://
+bindcode $mod+68 exec xdg-open http://
+#-- bindsym $mod+F3 exec $app_term -e ranger
+bindcode $mod+69 exec $app_term -e ranger
+#-- bindsym $mod+F4 exec $app_term -e sudo ranger
+bindcode $mod+70 exec $app_term -e sudo ranger
 
 # pause dunst
-bindsym $mod+d exec --no-startup-id "killall -SIGUSR1 dunst"
+#-- bindsym $mod+d exec --no-startup-id "killall -SIGUSR1 dunst"
+bindcode $mod+40 exec --no-startup-id "killall -SIGUSR1 dunst"
 # resume dunst
-bindsym $mod+Ctrl+d exec --no-startup-id "killall -SIGUSR2 dunst"
+#-- bindsym $mod+Ctrl+d exec --no-startup-id "killall -SIGUSR2 dunst"
+bindcode $mod+Ctrl+40 exec --no-startup-id "killall -SIGUSR2 dunst"
 # restart dunst
-bindsym $mod+Shift+d exec --no-startup-id "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+#-- bindsym $mod+Shift+d exec --no-startup-id "killall dunst; exec notify-send 'restart dunst'"
+bindcode $mod+Shift+40 exec --no-startup-id "killall dunst; exec notify-send 'restart dunst'"
+#-- bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindcode $mod+Ctrl+53 --release exec --no-startup-id xkill
 
 # screenshoting
-bindsym Print exec --no-startup-id ~/Scripts/screenshot.sh
-bindsym $mod+Print --release exec --no-startup-id ~/Scripts/screenshot.sh -s
+#-- bindsym Print exec --no-startup-id ~/Scripts/screenshot.sh
+bindcode 218 exec --no-startup-id ~/Scripts/screenshot.sh
+#-- bindsym $mod+Print --release exec --no-startup-id ~/Scripts/screenshot.sh -s
+bindcode $mod+218 --release exec --no-startup-id ~/Scripts/screenshot.sh -s
 
 # focus_follows_mouse no
 
 # border on, see where focus is
-bindsym $mod+apostrophe exec i3-msg border pixel 3
+#-- bindsym $mod+apostrophe exec i3-msg border pixel 3
+bindcode $mod+48 exec i3-msg border pixel 3
 bindsym --release $mod+apostrophe exec i3-msg border pixel 0
 
 # kill focused window
-bindsym $mod+s kill
+#-- bindsym $mod+s kill
+bindcode $mod+39 kill
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#-- bindsym $mod+j focus left
+bindcode $mod+44 focus left
+#-- bindsym $mod+k focus down
+bindcode $mod+45 focus down
+#-- bindsym $mod+l focus up
+bindcode $mod+46 focus up
+#-- bindsym $mod+semicolon focus right
+bindcode $mod+47 focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#-- bindsym $mod+Shift+j move left
+bindcode $mod+Shift+44 move left
+#-- bindsym $mod+Shift+k move down
+bindcode $mod+Shift+45 move down
+#-- bindsym $mod+Shift+l move up
+bindcode $mod+Shift+46 move up
+#-- bindsym $mod+Shift+semicolon move right
+bindcode $mod+Shift+47 move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth no
 
 # split orientation
-bindsym $mod+g split h; exec notify-send 'tile horizontally'
-bindsym $mod+v split v; exec notify-send 'tile vertically'
-bindsym $mod+Shift+x split toggle
+#-- bindsym $mod+g split h; exec notify-send 'tile horizontally'
+bindcode $mod+42 split h; exec notify-send 'tile horizontally'
+#-- bindsym $mod+v split v; exec notify-send 'tile vertically'
+bindcode $mod+55 split v; exec notify-send 'tile vertically'
+#-- bindsym $mod+Shift+x split toggle
+bindcode $mod+Shift+53 split toggle
 
 # toggle fullscreen mode for the focused container
-bindsym $mod+F11 fullscreen toggle
+#-- bindsym $mod+F11 fullscreen toggle
+bindcode $mod+95 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
@@ -92,27 +121,34 @@ bindsym $mod+F11 fullscreen toggle
 #bindsym $mod+x layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+#-- bindsym $mod+Shift+space floating toggle
+bindcode $mod+Shift+65 floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#-- bindsym $mod+space focus mode_toggle
+bindcode $mod+65 focus mode_toggle
 
 # toggle sticky
 #bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#-- bindsym $mod+a focus parent
+bindcode $mod+38 focus parent
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+Tab move scratchpad
+#-- bindsym $mod+Shift+Tab move scratchpad
+bindcode $mod+Shift+23 move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+Tab scratchpad show
+#-- bindsym $mod+Tab scratchpad show
+bindcode $mod+23 scratchpad show
 
 #navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+#-- bindsym $mod+Ctrl+Right workspace next
+bindcode $mod+Ctrl+114 workspace next
+#-- bindsym $mod+Ctrl+Left workspace prev
+bindcode $mod+Ctrl+113 workspace prev
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -139,34 +175,58 @@ workspace $ws7 output $right
 workspace $ws8 output $right
 
 # switch to workspace
-bindsym $mod+q workspace $ws1
-bindsym $mod+w workspace $ws2
-bindsym $mod+e workspace $ws3
-bindsym $mod+r workspace $ws4
-bindsym $mod+u workspace $ws5
-bindsym $mod+i workspace $ws6
-bindsym $mod+o workspace $ws7
-bindsym $mod+p workspace $ws8
+#-- bindsym $mod+q workspace $ws1
+bindcode $mod+24 workspace $ws1
+#-- bindsym $mod+w workspace $ws2
+bindcode $mod+25 workspace $ws2
+#-- bindsym $mod+e workspace $ws3
+bindcode $mod+26 workspace $ws3
+#-- bindsym $mod+r workspace $ws4
+bindcode $mod+27 workspace $ws4
+#-- bindsym $mod+u workspace $ws5
+bindcode $mod+30 workspace $ws5
+#-- bindsym $mod+i workspace $ws6
+bindcode $mod+31 workspace $ws6
+#-- bindsym $mod+o workspace $ws7
+bindcode $mod+32 workspace $ws7
+#-- bindsym $mod+p workspace $ws8
+bindcode $mod+33 workspace $ws8
 
 # Move focused container to workspace
-bindsym $mod+Shift+q move container to workspace $ws1
-bindsym $mod+Shift+w move container to workspace $ws2
-bindsym $mod+Shift+e move container to workspace $ws3
-bindsym $mod+Shift+r move container to workspace $ws4
-bindsym $mod+Shift+u move container to workspace $ws5
-bindsym $mod+Shift+i move container to workspace $ws6
-bindsym $mod+Shift+o move container to workspace $ws7
-bindsym $mod+Shift+p move container to workspace $ws8
+#-- bindsym $mod+Shift+q move container to workspace $ws1
+bindcode $mod+Shift+24 move container to workspace $ws1
+#-- bindsym $mod+Shift+w move container to workspace $ws2
+bindcode $mod+Shift+25 move container to workspace $ws2
+#-- bindsym $mod+Shift+e move container to workspace $ws3
+bindcode $mod+Shift+26 move container to workspace $ws3
+#-- bindsym $mod+Shift+r move container to workspace $ws4
+bindcode $mod+Shift+27 move container to workspace $ws4
+#-- bindsym $mod+Shift+u move container to workspace $ws5
+bindcode $mod+Shift+30 move container to workspace $ws5
+#-- bindsym $mod+Shift+i move container to workspace $ws6
+bindcode $mod+Shift+31 move container to workspace $ws6
+#-- bindsym $mod+Shift+o move container to workspace $ws7
+bindcode $mod+Shift+32 move container to workspace $ws7
+#-- bindsym $mod+Shift+p move container to workspace $ws8
+bindcode $mod+Shift+33 move container to workspace $ws8
 
 # Move to workspace with focused container
-bindsym $mod+Ctrl+q move container to workspace $ws1; workspace $ws1
-bindsym $mod+Ctrl+w move container to workspace $ws2; workspace $ws2
-bindsym $mod+Ctrl+e move container to workspace $ws3; workspace $ws3
-bindsym $mod+Ctrl+r move container to workspace $ws4; workspace $ws4
-bindsym $mod+Ctrl+u move container to workspace $ws5; workspace $ws5
-bindsym $mod+Ctrl+i move container to workspace $ws6; workspace $ws6
-bindsym $mod+Ctrl+o move container to workspace $ws7; workspace $ws7
-bindsym $mod+Ctrl+p move container to workspace $ws8; workspace $ws8
+#-- bindsym $mod+Ctrl+q move container to workspace $ws1; workspace $ws1
+bindcode $mod+Ctrl+24 move container to workspace $ws1; workspace $ws1
+#-- bindsym $mod+Ctrl+w move container to workspace $ws2; workspace $ws2
+bindcode $mod+Ctrl+25 move container to workspace $ws2; workspace $ws2
+#-- bindsym $mod+Ctrl+e move container to workspace $ws3; workspace $ws3
+bindcode $mod+Ctrl+26 move container to workspace $ws3; workspace $ws3
+#-- bindsym $mod+Ctrl+r move container to workspace $ws4; workspace $ws4
+bindcode $mod+Ctrl+27 move container to workspace $ws4; workspace $ws4
+#-- bindsym $mod+Ctrl+u move container to workspace $ws5; workspace $ws5
+bindcode $mod+Ctrl+30 move container to workspace $ws5; workspace $ws5
+#-- bindsym $mod+Ctrl+i move container to workspace $ws6; workspace $ws6
+bindcode $mod+Ctrl+31 move container to workspace $ws6; workspace $ws6
+#-- bindsym $mod+Ctrl+o move container to workspace $ws7; workspace $ws7
+bindcode $mod+Ctrl+32 move container to workspace $ws7; workspace $ws7
+#-- bindsym $mod+Ctrl+p move container to workspace $ws8; workspace $ws8
+bindcode $mod+Ctrl+33 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 assign [class="TelegramDesktop"] $ws4
@@ -186,47 +246,67 @@ for_window [class="^Chrom*"] border none
 for_window [urgent=latest] focus
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#-- bindsym $mod+Shift+c reload
+bindcode $mod+Shift+54 reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+s restart
+#-- bindsym $mod+Shift+s restart
+bindcode $mod+Shift+39 restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#-- bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindcode $mod+Shift+41 exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
+#-- bindsym $mod+0 mode "$mode_system"
+bindcode $mod+19 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    #-- bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindcode 46 exec --no-startup-id i3exit lock, mode "default"
+    #-- bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindcode 39 exec --no-startup-id i3exit suspend, mode "default"
+    #-- bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindcode 30 exec --no-startup-id i3exit switch_user, mode "default"
+    #-- bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindcode 26 exec --no-startup-id i3exit logout, mode "default"
+    #-- bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindcode 43 exec --no-startup-id i3exit hibernate, mode "default"
+    #-- bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindcode 27 exec --no-startup-id i3exit reboot, mode "default"
+    #-- bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindcode Shift+39 exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    #-- bindsym Return mode "default"
+    bindcode 36 mode "default"
+    #-- bindsym Escape mode "default"
+    bindcode 9 mode "default"
 }
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+h mode "resize"
+#-- bindsym $mod+h mode "resize"
+bindcode $mod+43 mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        #-- bindsym h resize shrink width 5 px or 5 ppt
+        bindcode 43 resize shrink width 5 px or 5 ppt
+        #-- bindsym j resize grow height 5 px or 5 ppt
+        bindcode 44 resize grow height 5 px or 5 ppt
+        #-- bindsym k resize shrink height 5 px or 5 ppt
+        bindcode 45 resize shrink height 5 px or 5 ppt
+        #-- bindsym l resize grow width 5 px or 5 ppt
+        bindcode 46 resize grow width 5 px or 5 ppt
 
         # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+        #-- bindsym Return mode "default"
+        bindcode 36 mode "default"
+        #-- bindsym Escape mode "default"
+        bindcode 9 mode "default"
 }
 
 # Autostart applications
@@ -261,7 +341,8 @@ bar {
 }
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+#-- bindsym $mod+m bar mode toggle
+bindcode $mod+58 bar mode toggle
 
 # Theme colors
 # class                 border  backgr. text    indic.  child_border

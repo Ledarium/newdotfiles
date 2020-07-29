@@ -206,3 +206,5 @@ if exists('$TMUX')
 endif
 set title
 
+"" Nondefault paste
+vnoremap p "_dP

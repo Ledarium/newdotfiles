@@ -146,7 +146,7 @@ filetype plugin on
 syntax on
 
 set encoding=utf-8
-set nonumber norelativenumber
+set nonumber relativenumber
 set numberwidth=3
 :nmap <C-N><C-N> :set nu!<CR>:set relativenumber!<CR>
 
@@ -206,3 +206,5 @@ if exists('$TMUX')
 endif
 set title
 
+"" Nondefault paste
+vnoremap p "_dP

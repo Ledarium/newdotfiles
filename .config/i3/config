@@ -315,7 +315,7 @@ exec --no-startup-id ~/.config/i3/autostart.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	status_command py3status -c ~/.config/i3/i3status.conf | ~/.config/i3/i3-keyboard-layout i3status
+	status_command i3status -c ~/.config/i3/i3status.conf | ~/.config/i3/i3-keyboard-layout i3status
 	position top
 	mode hide
 
@@ -324,7 +324,7 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	font xft:Liberation Sans 10
+	font xft:Source Code Pro 10
 	strip_workspace_numbers yes
 
 	colors {

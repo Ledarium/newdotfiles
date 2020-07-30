@@ -76,7 +76,7 @@ bindcode $mod+218 --release exec --no-startup-id ~/Scripts/screenshot.sh -s
 # border on, see where focus is
 #-- bindsym $mod+apostrophe exec i3-msg border pixel 3
 bindcode $mod+48 exec i3-msg border pixel 3
-bindsym --release $mod+apostrophe exec i3-msg border pixel 0
+bindcode --release $mod+48 exec i3-msg border pixel 0
 
 # kill focused window
 #-- bindsym $mod+s kill

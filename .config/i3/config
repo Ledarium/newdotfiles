@@ -27,7 +27,7 @@ font xft:Noto Sans 12
 floating_modifier $mod
 
 #-- bindsym Ctrl+1 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru"
-bindcode Ctrl+10 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru"
+bindcode Ctrl+10 exec --no-startup-id "setxkbmap -model pc105 -layout us"
 #-- bindsym Ctrl+2 exec --no-startup-id "setxkbmap -model pc105 -layout ru,us"
 bindcode Ctrl+11 exec --no-startup-id "setxkbmap -model pc105 -layout ru,us"
 
@@ -62,14 +62,12 @@ bindcode $mod+Ctrl+40 exec --no-startup-id "killall -SIGUSR2 dunst"
 # restart dunst
 #-- bindsym $mod+Shift+d exec --no-startup-id "killall dunst; exec notify-send 'restart dunst'"
 bindcode $mod+Shift+40 exec --no-startup-id "killall dunst; exec notify-send 'restart dunst'"
-#-- bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindcode $mod+Ctrl+53 --release exec --no-startup-id xkill
 
 # screenshoting
 #-- bindsym Print exec --no-startup-id ~/Scripts/screenshot.sh
-bindcode 218 exec --no-startup-id ~/Scripts/screenshot.sh
+bindcode 218 exec --no-startup-id flameshot gui
 #-- bindsym $mod+Print --release exec --no-startup-id ~/Scripts/screenshot.sh -s
-bindcode $mod+218 --release exec --no-startup-id ~/Scripts/screenshot.sh -s
+bindcode $mod+218 --release exec --no-startup-id flameshot
 
 # focus_follows_mouse no
 
@@ -81,6 +79,9 @@ bindcode --release $mod+48 exec i3-msg border pixel 0
 # kill focused window
 #-- bindsym $mod+s kill
 bindcode $mod+39 kill
+#-- bindsym $mod+Ctrl+s --release exec --no-startup-id xkill
+bindcode $mod+Ctrl+39 --release exec --no-startup-id xkill
+
 # change focus
 #-- bindsym $mod+j focus left
 bindcode $mod+44 focus left
@@ -248,15 +249,15 @@ for_window [urgent=latest] focus
 
 # reload the configuration file
 #-- bindsym $mod+Shift+c reload
-bindcode $mod+Shift+54 reload
+bindcode $mod+54 reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#-- bindsym $mod+Shift+s restart
-bindcode $mod+Shift+39 restart
+#-- bindsym $mod+Shift+c restart
+bindcode $mod+Shift+54 restart
 
 # exit i3 (logs you out of your X session)
-#-- bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindcode $mod+Shift+41 exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#-- bindsym $mod+Shift+c exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindcode $mod+Ctrl+54 exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 #-- bindsym $mod+0 mode "$mode_system"
@@ -294,14 +295,14 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        #-- bindsym h resize shrink width 5 px or 5 ppt
-        bindcode 43 resize shrink width 5 px or 5 ppt
-        #-- bindsym j resize grow height 5 px or 5 ppt
-        bindcode 44 resize grow height 5 px or 5 ppt
-        #-- bindsym k resize shrink height 5 px or 5 ppt
-        bindcode 45 resize shrink height 5 px or 5 ppt
-        #-- bindsym l resize grow width 5 px or 5 ppt
-        bindcode 46 resize grow width 5 px or 5 ppt
+        #-- bindsym j resize shrink width 5 px or 5 ppt
+        bindcode 44 resize shrink width 5 px or 5 ppt
+        #-- bindsym k resize grow height 5 px or 5 ppt
+        bindcode 45 resize grow height 5 px or 5 ppt
+        #-- bindsym l resize shrink height 5 px or 5 ppt
+        bindcode 46 resize shrink height 5 px or 5 ppt
+        #-- bindsym semicolon resize grow width 5 px or 5 ppt
+        bindcode 47 resize grow width 5 px or 5 ppt
 
         # exit resize mode: Enter or Escape
         #-- bindsym Return mode "default"

@@ -92,9 +92,15 @@ function upload_py {
     for host in $argv; do
         sshpass -p 12345678 scp /tmp/version root@$host:/root/version.diff
         sshpass -p 12345678 scripts/manage_tools/transfer.sh $host
-        sleep 1
-        sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -t root@$host \
-            'bash -ic "clear_logs; install_py --debug --clear-py --clear-xml -r $HOSTNAME; mprd_restart; exit"'
+        sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -ttt root@$host <<'ENDSSH'
+            mkdir -p /usr/lib/python3.6/mprdaemon
+            mkdir -p /usr/share/mprdaemon/cli
+            for file in '/var/log/syslog /var/log/mprdaemon/command-history.log /var/log/mprdaemon/daemon.log'; do
+                truncate -s 0 $file
+            done
+            python3 /vmm-projects/scripts/manage_tools/install.py --debug --clear-py --clear-xml -r $HOSTNAME
+ENDSSH
+        sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -ttt root@$host sudo /usr/bin/mprd restart
     done
 }
 

@@ -30,7 +30,6 @@ floating_modifier $mod
 bindcode Ctrl+10 exec --no-startup-id "setxkbmap -model pc105 -layout us"
 #-- bindsym Ctrl+2 exec --no-startup-id "setxkbmap -model pc105 -layout ru,us"
 bindcode Ctrl+11 exec --no-startup-id "setxkbmap -model pc105 -layout ru,us"
-
 ##############################
 # Start Applications
 # 
@@ -42,7 +41,7 @@ bindcode $mod+Shift+36 exec $retro_term
 
 # start program launcher
 #-- bindsym $mod+z exec --no-startup-id dmenu_run
-bindcode $mod+52 exec --no-startup-id dmenu_run
+bindcode $mod+52 exec --no-startup-id "setxkbmap -model pc105 -layout us; dmenu_run"
 
 #-- bindsym $mod+F1 exec telegram-desktop
 bindcode $mod+67 exec telegram-desktop
@@ -411,4 +410,32 @@ client.background       #2B2C2B
 #
 #        bindsym Return mode "default"
 #        bindsym Escape mode "default"
-#}
+#
+### Volume control
+
+# Path to volume control, without trailing slash
+set $volumepath /usr/bin/i3-volume
+
+# Command for the status line
+#   ie: i3blocks, i3status
+set $statuscmd i3status
+
+# Signal used to update the status line
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+set $statussig SIGUSR1
+
+# Amount to increase/decrease volume as a percentage
+set $volumestep 5
+
+# pulseaudio-utils settings
+#
+# Symbolic name for sink (numeric index not supported)
+#   Recommended: comment out this setting and omit the -s option to use default sink
+#   List sink names: pacmd list-sinks | awk -F "[<>]" '/^\s+name: <.*>/{print $2}'
+#set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
+
+# Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
+bindsym XF86AudioRaiseVolume exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig}

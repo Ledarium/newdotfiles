@@ -1,5 +1,6 @@
 alias v=$EDITOR
 alias vc='nvim ~/.config/nvim/init.vim'
+alias v3='nvim ~/.config/i3/config'
 alias rr='ranger'
 
 # colored apps

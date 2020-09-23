@@ -1,7 +1,7 @@
 [user]
-    email = maylarov@yandex.ru
+    email = d.maylarov@emzior.ru
     name = Dmitry Maylarov
-    signingkey = maylarov@yandex.ru
+	signingkey = E9D4CC42C8F4A442811ABD7DB0FF4856255CC2CA
 [core]
 	autocrlf = false
 	safecrlf = false
@@ -18,6 +18,8 @@
 [credential]
     helper = cache --timeout=7200
 [gpg]
-    program = gpg2
+	program = gpg
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[commit]
+	gpgsign = true

@@ -164,8 +164,8 @@ set $ws6 6:i
 set $ws7 7:o
 set $ws8 8:p
 
-set $left DVI-D-0
-set $right VGA-0
+set $left DP-0
+set $right HDMI-0
 workspace $ws1 output $left
 workspace $ws2 output $left
 workspace $ws3 output $left

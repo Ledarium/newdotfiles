@@ -128,7 +128,15 @@ call plug#begin()
         let g:session_autosave = 'yes'
         let g:session_autoload = 'yes'
         let g:session_default_to_last = 'yes'
-        
+
+    Plug 'dbeniamine/todo.txt-vim'
+        " Use todo#complete as the omni complete function for todo files
+        au filetype todo setlocal omnifunc=todo#Complete
+        " Auto complete projects
+        au filetype todo imap <buffer> + +<C-X><C-O>
+        " Auto complete contexts
+        au filetype todo imap <buffer> @ @<C-X><C-O>
+
 call plug#end()
 
 colorscheme nord

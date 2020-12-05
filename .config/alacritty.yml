@@ -25,7 +25,7 @@ colors:
     white: '0xECEFF4'
 
 font:
-  size: 14
+  size: 12
   # The normal (roman) font face to use.
   normal:
     family: Source Code Pro

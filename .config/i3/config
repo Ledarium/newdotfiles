@@ -41,7 +41,7 @@ bindcode $mod+Shift+36 exec $retro_term
 
 # start program launcher
 #-- bindsym $mod+z exec --no-startup-id dmenu_run
-bindcode $mod+52 exec --no-startup-id "setxkbmap -model pc105 -layout us; dmenu_run"
+bindcode $mod+52 exec --no-startup-id "setxkbmap -model pc105 -layout us; rofi -show run"
 
 #-- bindsym $mod+F1 exec telegram-desktop
 bindcode $mod+67 exec telegram-desktop
@@ -436,6 +436,6 @@ set $volumestep 5
 #set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
 
 # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
-bindsym XF86AudioRaiseVolume exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig}
+bindsym XF86AudioRaiseVolume exec $volumepath -np up $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume exec $volumepath -np down $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig

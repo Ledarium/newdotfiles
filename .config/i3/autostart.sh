@@ -5,7 +5,8 @@ nm-applet &
 sleep 1
 xdg-open http:// &
 telegram-desktop &
-element-desktop-nightly &
+element-desktop &
+deluge &
 safeeyes &
-redshift-gtk -b 1.0:0.5 -t 6500:3000 &
+redshift-gtk -b 1.0:0.7 -t 6500:3700 &
 

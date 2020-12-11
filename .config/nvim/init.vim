@@ -7,6 +7,7 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+    Plug 'powerman/vim-plugin-AnsiEsc'
     Plug 'farmergreg/vim-lastplace'
 
     Plug 'ctrlpvim/ctrlp.vim'

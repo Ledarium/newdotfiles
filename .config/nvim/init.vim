@@ -63,7 +63,7 @@ call plug#begin()
         let g:ale_list_window_size = 5
 
         let g:ale_linters = {'python': ['pylama', 'pyflakes']}
-        let g:ale_python_auto_pipenv = 1
+        let g:ale_python_auto_pipenv = 0
         let g:ale_linters_explicit = 1
 
         "let g:ale_python_pylama_change_directory = 0
@@ -75,6 +75,8 @@ call plug#begin()
         let g:lt_height = 10
 
     Plug 'davidhalter/jedi-vim'
+    Plug 'xavierd/clang_complete'
+        let g:clang_library_path='/usr/lib/llvm-10/lib/libclang.so.1'
 
     "Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
     "    "let g:pymode_lint_checkers = ['pylint']

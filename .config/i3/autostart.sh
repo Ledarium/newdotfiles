@@ -3,6 +3,7 @@ sudo nvidia-settings --assign CurrentMetaMode="DPY-1: nvidia-auto-select @1920x1
 xrandr --output DP-0 --primary & 
 nm-applet &
 sleep 1
+blueman-applet &
 xdg-open http:// &
 telegram-desktop &
 element-desktop &

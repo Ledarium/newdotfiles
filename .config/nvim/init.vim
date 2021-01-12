@@ -17,6 +17,7 @@ call plug#begin()
     Plug 'easymotion/vim-easymotion'
     Plug 'chaoren/vim-wordmotion'
 
+    Plug 'sirtaj/vim-openscad'
     Plug 'tpope/vim-fugitive'
         " Fugitive Conflict Resolution
         nnoremap <leader>gd :Gvdiffsplit!<CR>

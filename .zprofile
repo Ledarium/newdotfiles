@@ -98,7 +98,7 @@ function upload_py {
             for file in '/var/log/syslog /var/log/mprdaemon/command-history.log /var/log/mprdaemon/daemon.log'; do
                 truncate -s 0 $file
             done
-            python3 /vmm-projects/scripts/manage_tools/install.py --debug --clear-py --clear-xml -r $HOSTNAME
+            python3 /vmm-projects/scripts/manage_tools/install.py --debug --clear-py --clear-xml -p $(cat /vmm-projects/scripts/manage_tools/.project_lists/$HOSTNAME | xargs) 
 ENDSSH
         sshpass -p 12345678 ssh -o "StrictHostKeyChecking=no" -ttt root@$host sudo /usr/bin/mprd restart
     done

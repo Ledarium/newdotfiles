@@ -10,4 +10,4 @@ element-desktop &
 deluge &
 safeeyes &
 redshift-gtk -b 1.0:0.7 -t 6500:3700 &
-
+mount /mnt/share &

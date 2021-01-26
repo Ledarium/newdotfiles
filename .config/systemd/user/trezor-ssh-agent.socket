@@ -1,0 +1,12 @@
+[Unit]
+Description=trezor-agent SSH agent socket
+
+[Socket]
+ListenStream=%t/trezor-agent/S.ssh
+FileDescriptorName=ssh
+Service=trezor-ssh-agent.service
+SocketMode=0600
+DirectoryMode=0700
+
+[Install]
+WantedBy=sockets.target

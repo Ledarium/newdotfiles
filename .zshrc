@@ -113,3 +113,5 @@ ZSH_COMMAND_TIME_ECHO=1
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export SSH_AUTH_SOCK=$(systemctl show --user --property=Listen trezor-ssh-agent.socket | grep -o "/run.*" | cut -d " " -f 1)

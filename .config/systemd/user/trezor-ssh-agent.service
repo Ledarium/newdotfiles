@@ -7,4 +7,4 @@ Type=simple
 Restart=always
 Environment="DISPLAY=:0"
 Environment="PATH=/bin:/usr/bin:/usr/local/bin:%h/.local/bin"
-ExecStart=%h/.local/bin/trezor-agent --foreground --sock-path %t/trezor-agent/S.ssh --passphrase-entry-binary pinentry-gnome3 --pin-entry-binary %h/.local/bin/trezor-gpg-pinentry-tk d@dota
+ExecStart=%h/.local/bin/trezor-agent --foreground --sock-path %t/trezor-agent/S.ssh --passphrase-entry-binary pinentry-gnome3 --pin-entry-binary ~/.local/bin/trezor-gpg-pinentry-tk d@dota

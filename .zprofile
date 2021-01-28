@@ -130,6 +130,8 @@ alias -g H='| head -n '
 alias -g T='| tail -n '
 # edit output in nvim
 alias -g V='> out && nvim out'
+# disown
+alias -g D='&; disown'
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv vi_mode)

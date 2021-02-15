@@ -34,10 +34,10 @@ fi
 export GPG_TTY=$(tty)
 
 export PATH=/usr/lib/ccache:$PATH
-export CC="ccache gcc"
-export HOSTCC="ccache gcc"
-export HOSTCXX="ccache g++"
-export CCACHE_DIR="~/.ccache"
+#export CC="ccache gcc"
+#export HOSTCC="ccache gcc"
+#export HOSTCXX="ccache g++"
+#export CCACHE_DIR="~/.ccache"
 
 function connect {
     while true
